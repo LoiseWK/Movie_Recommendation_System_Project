@@ -83,7 +83,7 @@ Challenge → New users get no recommendations (cold start problem).
 Finds similar movies based on past ratings.
 More stable than User-Based CF.
 
-(c) Content-Based CF
+ 🔹 4. Content-Based CF
 
 Recommends movies similar to those a user has liked.It works well for users with few ratings but requires detailed movie metadata.
 
@@ -91,15 +91,24 @@ TF-IDF Vectorization on movie genres
 
 Cosine Similarity to find movies with similar genre profiles
 
-🔹 3. Matrix Factorization Using SVD (Final Model)
+🔹 5. Matrix Factorization Using SVD (Final Model)
 
 - Singular Value Decomposition (SVD) decomposes the user-movie interaction matrix into latent factors, improving recommendation accuracy.
 
 - Hyperparameter tuning optimizes n_factors, n_epochs,lr_all, reg_all to reduce errors.
 
-## Model Evaluation and Insights
+## 5. Model Evaluation and Insights
 We assessed different recommendation models using Root Mean Squared Error (RMSE) to measure accuracy. Lower RMSE values indicate better predictions.
 
 Mean Squared Error (RMSE) and Mean Absolute Error (MAE). These metrics help measure the accuracy of predicted ratings compared to actual user ratings. A lower RMSE and MAE indicate better performance, as they reflect smaller differences between predicted and real user preferences.
 
 The evaluation results reveal distinct strengths and weaknesses among the models tested. The popularity-based model, which recommends movies based on overall popularity rather than individual preferences, had the highest RMSE (1.12) and MAE (0.85). While simple to implement, it lacks personalization, leading to lower accuracy in recommendations.
+
+## 6. Future Improvements 
+- Hybrid Model: Combine Collaborative Filtering + Content-Based Filtering.
+- Real-Time Deployment: Deploy the system as a Flask/Streamlit web app.
+- Cold-Start Problem: Implement metadata-based filtering for new users.
+
+## 7. Conclusion
+The Movie Recommendation System successfully provides personalized movie suggestions by leveraging Collaborative Filtering (User-Based & Item-Based) and Matrix Factorization (SVD). Through rigorous evaluation and hyperparameter tuning, we optimized the SVD model, achieving an RMSE of 0.80, making it the most effective recommendation approach.
+
